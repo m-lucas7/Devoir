@@ -35,4 +35,28 @@ window.addEventListener("load", function () {
       });
     });
   });
+
+  // 2.A)
+  const forfaits = document.querySelectorAll(".card");
+  const btOk = document.getElementById("btEcran1");
+  let forfaitPrecedant = null;
+  btOk.disabled = true;
+
+  forfaits.forEach((forfait) => {
+    forfait.addEventListener("click", function () {
+      forfaits.forEach((autreForfait) => {
+        if (autreForfait !== forfait) {
+          autreForfait.style.backgroundColor = "white";
+        }
+      });
+
+      if (forfait.style.backgroundColor === "red") {
+        forfait.style.backgroundColor = "white";
+        btOk.disabled = true;
+      } else {
+        forfait.style.backgroundColor = "red";
+        btOk.disabled = false;
+      }
+    });
+  });
 });

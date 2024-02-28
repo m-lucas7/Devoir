@@ -59,4 +59,18 @@ window.addEventListener("load", function () {
       }
     });
   });
+
+  // 3)
+
+  let nbrAnnonce = document.getElementById("inputNb");
+
+  nbrAnnonce.addEventListener("input", function () {
+    let annonce = parseFloat(nbrAnnonce.value);
+    let btOk2 = document.getElementById("btEcran2");
+    btOk2.disabled = true;
+
+    if (annonce > 0) {
+      btOk2.disabled = false;
+    }
+  });
 });
